@@ -39,7 +39,7 @@ export default function Register() {
     password: Yup.string().required("O campo passwor é obrigatório"),
   })
 
-  async function handleSubmit(values, { resetForm }) {
+  async function handleSubmit(values: any, { resetForm }: { resetForm: () => void }) {
     setSending(true);
     try {
       await fetch("/api/auth/register", {
